@@ -341,6 +341,7 @@ footer .content {
     outline: none;
     border-radius: 0;
     color: #ffffff;
+    font-size: 16px;
 }
 
 .contact-form input::placeholder,
@@ -363,9 +364,16 @@ footer .content {
 .iti input.error {
     border-color: #dc3545;
 }
+.iti__selected-country {
+    padding-bottom: 2px !important;
+}
 
 .iti__selected-country-primary {
     padding-left: 0 !important;
+}
+
+.iti__selected-dial-code {
+    font-size: 16px;
 }
 
 .iti__arrow {

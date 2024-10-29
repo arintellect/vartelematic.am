@@ -69,17 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const iti = window.intlTelInput(phoneInput, {
         separateDialCode: true,
         formatOnDisplay: true,
-        autoPlaceholder: "polite",
+        autoPlaceholder: "off",
         preferredCountries: ["am"], // Armenia first
         initialCountry: "am",
+        loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
     });
 
     // Validate on form submit
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function(e) {
+        console.log('Current phone number:', phoneInput.value);
+        console.log('Is valid?:', iti.isValidNumber());
+        console.log('Validation error:', iti.getValidationError());
+        console.log('Full number:', iti.getNumber());
+        
         if (!iti.isValidNumber()) {
             e.preventDefault();
             phoneInput.classList.add("error");
+            console.log('Validation Error Code:', iti.getValidationError());
         }
     });
 
