@@ -374,6 +374,42 @@ footer .content {
     border-top: 4px solid #ffffff !important;
 }
 
+.iti__arrow--up {
+    border-top: none !important;
+    border-bottom: 4px solid #ffffff !important;
+}
+
+.iti__country-list .iti__arrow {
+    border-top: 4px solid #333 !important;
+}
+
+.iti__country-list {
+    background-color: #010101 !important;
+    border: none !important;
+}
+
+.iti__country {
+    background-color: #010101 !important;
+    color: #ffffff !important;
+}
+
+.iti__search-input {
+    background-color: #010101 !important;
+    color: #ffffff !important;
+    padding: 8px !important;
+    outline: none !important;
+}
+
+.iti__search-input::placeholder {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.iti__country:hover {
+    background-color: #3252a3 !important;
+}
+
 @media (max-width: 1400px) {
     .about-image img {
         width: 650px;
