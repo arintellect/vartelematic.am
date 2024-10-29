@@ -94,4 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
     phoneInput.addEventListener("input", function() {
         phoneInput.classList.remove("error");
     });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 });
