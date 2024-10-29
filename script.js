@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         menu.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
     });
 
     if (window.location.hash) {
