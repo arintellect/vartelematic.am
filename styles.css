@@ -11,7 +11,7 @@ html, body {
     overscroll-behavior: none;
     font-size: 14px;
     scroll-behavior: smooth;
-    min-width: 320px; /* Add minimum width */
+    min-width: 360px;
 }
 
 a {
@@ -508,6 +508,13 @@ footer .content {
         overflow: hidden;
     }
 
+    .section .content {
+        padding: 64px 1rem;
+    }
+    .products-row {
+        padding: 20px 24px;
+    }
+
     .hamburger {
         display: block;
     }
@@ -623,4 +630,76 @@ footer .content {
     .contact-info {
         text-align: center;
     }
+
+    body.armenian {
+        .hero-section h1 {
+            font-size: 36px !important;
+        }
+
+        .hero-section p {
+            font-size: 16px !important;;
+        }
+
+        .info h2.title {
+            font-size: 30px !important;;
+        }
+    }
+}
+
+body.armenian {
+    font-size: 12px;
+
+    .hero-section h1 {
+        font-size: 58px;
+    }
+    
+    .hero-section p {
+        font-size: 18px;
+    }
+    
+    .footer-bottom .copyright {
+        font-size: 20px;
+    }
+    
+    .section-name {
+        font-size: 16px;
+    }
+    
+    .info h2 {
+        font-size: 28px;
+    
+    }
+    
+    .info h2.title {
+        font-size: 36px;
+    }
+    
+    .info p {
+        font-size: 14px;
+    }
+    
+    .contact-form-title h2 {
+        font-size: 28px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+    
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .iti__selected-dial-code {
+        font-size: 14px;
+    }
+    
+    .iti__search-input::placeholder {
+        font-size: 12px !important;
+    }
+    
 }
