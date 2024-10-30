@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Add click event listeners to all navigation links in the hamburger menu
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', () => {
             // Remove the 'active' class from both the menu and hamburger button
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Phone input initialization
     const phoneInput = document.querySelector("#phone");
     const iti = window.intlTelInput(phoneInput, {
         separateDialCode: true,
@@ -75,23 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
         initialCountry: "am",
         loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
     });
-
-    // Validate on form submit
+    
     const form = document.getElementById("contactForm");
+
+    const hiddenPhoneInput = document.createElement('input');
+    hiddenPhoneInput.type = 'hidden';
+    hiddenPhoneInput.name = 'phone'; 
+    form.appendChild(hiddenPhoneInput);
+
+    phoneInput.removeAttribute('name');
+
     form.addEventListener("submit", function(e) {
-        console.log('Current phone number:', phoneInput.value);
-        console.log('Is valid?:', iti.isValidNumber());
-        console.log('Validation error:', iti.getValidationError());
-        console.log('Full number:', iti.getNumber());
+        e.preventDefault();
         
         if (!iti.isValidNumber()) {
-            e.preventDefault();
             phoneInput.classList.add("error");
-            console.log('Validation Error Code:', iti.getValidationError());
+            return;
         }
+        
+        hiddenPhoneInput.value = iti.getNumber();
+        
+        form.submit();
     });
 
-    // Remove error class on input
     phoneInput.addEventListener("input", function() {
         phoneInput.classList.remove("error");
     });
