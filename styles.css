@@ -103,6 +103,7 @@ nav {
 }
 
 .hero-section {
+    position: relative;
     height: 100vh;
     background-image: url('images/hero-image.png');
     background-attachment: fixed;
@@ -115,7 +116,19 @@ nav {
     text-align: center;
 }
 
+.hero-section .overlay {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 85px;
+    background: linear-gradient(0deg, #010101 19.59%, rgba(1, 1, 1, 0.81) 44.72%, rgba(1, 1, 1, 0) 100%);
+    pointer-events: none;
+}
+
 .hero-section .content {
+    position: relative;
+    z-index: 1;
     max-width: 1400px;
     padding: 0 2rem;
     box-sizing: content-box;
@@ -243,6 +256,10 @@ footer .content {
 
 .about-info {
     flex: 1;
+}
+
+.about-info p {
+    letter-spacing: 0.8px;
 }
 
 .research-areas-content {
